@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flexslider Test</title>
+<!-- 
+注意事项:
+
+1.本例使用了JQUERY，使用时要先引入JQUERY库
+2.要先准备好图片链接，然后保存在数组里面（比如下面的imgss），将数组作为函数flexslider的第二个参数
+3.函数flexslider的第一个参数为该动画的容器元素，一般要准备<div><img /></div>这样的结构，然后将div元素作为函数flexslider的第一个参数，img元素的src属性值应该为图片链接数组imgss中的第一个链接
+4.函数flexslider的第三个参数可省略，第一个参数规定了动画过程中的三个关键值：间隔时间interval，图片淡出耗时fadeoutTime，图片淡入耗时fadeinTime，值类型都应是正整数，单位为毫秒ms
+
+-->
+
+<link rel="stylesheet" type="text/css" href="css/flexslider-1.0.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/flexslider-1.0.js"></script>
+<script>
+$(document).ready(function(e) {
+	var img01 = "http://image.zuchecdn.com//newversion/focusPicture/2016/20160821shangmen_web.jpg";
+	var img02 = "http://image.zuchecdn.com//newversion/focusPicture/2016/20160829pufa_web.jpg";
+	var img03 = "http://image.zuchecdn.com//newversion/focusPicture/2016/20160822nianzu_web.jpg";
+	var img04 = "http://image.zuchecdn.com/newversion/focusPicture/2016/20160620new150_web.jpg";
+	var imgss = new Array(img01,img02,img03,img04);
+	var imgsy = new Array(img01,img02,img03);
+	
+	flexslider($("#test"),imgss);
+	flexslider($("#test2"),imgsy,{interval:8000,fadeoutTime:500,fadeinTime:500});
+});
+</script>
+<style>
+#test{
+	width:1000px;
+	height:400px;
+	overflow:hidden;
+}
+
+#test img {
+	width:100%;
+	height:100%;
+}
+
+#test2{
+	width:600px;
+	height:200px;
+	overflow:hidden;
+}
+
+#test2 img {
+	width:100%;
+	height:100%;
+}
+</style>
+</head>
+
+<body>
+<div id="test">
+	<img id="flexslider-img" src="http://image.zuchecdn.com//newversion/focusPicture/2016/20160821shangmen_web.jpg" />
+</div>
+
+<div id="test2">
+	<img id="flexslider-img" src="http://image.zuchecdn.com//newversion/focusPicture/2016/20160821shangmen_web.jpg" />
+</div>
+</body>
+</html>
